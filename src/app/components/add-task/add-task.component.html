@@ -1,6 +1,7 @@
 <form 
     class="add-form" 
-    (ngSubmit)="onSubmit()"
+    #login="ngForm"
+    (ngSubmit)="onSubmit(login)"
     *ngIf="showAddTask"
 >
 
@@ -19,5 +20,6 @@
         <input type="checkbox" name="reminder" id="reminder" [(ngModel)]="reminder" />
     </div>
 
-    <input type="submit" value="Save Task" class="btn btn-block">
+    <input type="submit" value="Save Task" class="btn btn-block" >
+
 </form>
