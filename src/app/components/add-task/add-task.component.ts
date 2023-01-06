@@ -26,14 +26,16 @@ export class AddTaskComponent implements OnInit {
   }
 
   onSubmit(login: NgForm) {
+
     if (this.text.length === 0) {
       alert("Please add a task!");
       return
+
     }
     const { text, day, reminder } = this
     const newTask = { text, day, reminder }
 
+    login.resetForm()
     this.onAddTask.emit(newTask)
-    login.reset()
   }
 }
